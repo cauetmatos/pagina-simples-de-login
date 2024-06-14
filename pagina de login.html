@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <div class="error-message" id="error-message"></div>
+        <input type="text" id="username" placeholder="Usuário" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button onclick="login()">Entrar</button>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Aqui você pode adicionar a lógica de validação de usuário e senha
+            if (username === 'admin' && password === 'admin') {
+                alert('Login bem-sucedido!');
+                // Redirecionar para outra página ou realizar outra ação
+            } else {
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Usuário ou senha inválidos!';
+            }
+        }
+    </script>
+</body>
+</html>
